@@ -4,7 +4,7 @@ root = tk.Tk()
 gif_count = 121
 
 frames = [tk.PhotoImage(file='c:\\Programme\\candle\\light.gif', format='gif -index %i' % i) for i in range(gif_count)]
-label = tk.Label(root, borderwidth=0, highlightthickness=0)
+label = tk.Label(root, borderwidth=0, highlightthickness=0, bg="black")
 
 lastClickX = 0
 lastClickY = 0
@@ -35,7 +35,7 @@ root.overrideredirect(True)
 root.geometry("-3730-0")
 root.lift()
 root.wm_attributes("-topmost", True)
-root.wm_attributes("-alpha", 0.7)
+root.wm_attributes('-transparentcolor', 'black')
 root.bind('<Button-1>', save_last_click_pos)
 root.bind('<B1-Motion>', dragging)
 root.after(0, update, 0)
